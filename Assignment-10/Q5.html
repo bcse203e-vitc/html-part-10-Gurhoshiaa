@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Theme Switcher</title>
+    <style>
+        body.light-mode {
+            background-color: white;
+            color: black;
+            font-size: 16px;
+        }
+
+        body.dark-mode {
+            background-color: black;
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const lightModeButton = document.getElementById('lightModeBtn');
+            const darkModeButton = document.getElementById('darkModeBtn');
+            const body = document.body;
+
+            lightModeButton.addEventListener('click', function () {
+                body.classList.add('light-mode');
+                body.classList.remove('dark-mode');
+            });
+
+            darkModeButton.addEventListener('click', function () {
+                body.classList.add('dark-mode');
+                body.classList.remove('light-mode');
+            });
+        });
+
+    </script>
+</head> 
+
+<body class="light-mode">
+    <h1>Interactive Theme Switcher</h1>
+    <button id="lightModeBtn">Light Mode</button>
+    <button id="darkModeBtn">Dark Mode</button>
+</body>
+
+</html>

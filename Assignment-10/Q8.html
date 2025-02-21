@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Country-State Dropdown</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const countrySelect = document.getElementById('country');
+            const stateSelect = document.getElementById('state');
+
+            const states = {
+                "USA": ["California", "Texas", "New York"],
+                "India": ["Tamil Nadu", "Maharashtra", "Karnataka"],
+                "UK": ["England", "Scotland", "Wales"]
+            };
+
+            countrySelect.addEventListener('change', function() {
+                const selectedCountry = countrySelect.value;
+                const statesList = states[selectedCountry] || [];
+                stateSelect.innerHTML = '';
+
+                statesList.forEach(state => {
+                    const option = document.createElement('option');
+                    option.value = state;
+                    option.textContent = state;
+                    stateSelect.appendChild(option);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Country-State Selection Dropdown</h1>
+    <form>
+        <label for="country">Select Country:</label>
+        <select id="country">
+            <option value="">--Select Country--</option>
+            <option value="USA">USA</option>
+            <option value="India">India</option>
+            <option value="UK">UK</option>
+        </select>
+
+        <label for="state">Select State:</label>
+        <select id="state">
+            <option value="">--Select State--</option>
+        </select>
+    </form>
+</body>
+</html>
